@@ -1,0 +1,28 @@
+﻿@page "/counter"
+
+<h1>Counter</h1>
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">+</button>
+<button class="btn btn-primary" @onclick="DecrementCount">-</button>
+
+<div>
+    <svg height="100" width="100">
+        <circle cx="50" cy="50" r="@radius" stroke="black" stroke-width="3" fill="red" />
+    </svg>
+</div>
+@code {
+    private int currentCount = 0;
+    double radius = 40;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+
+    private void DecrementCount()
+    {
+        currentCount--;
+    }
+}
